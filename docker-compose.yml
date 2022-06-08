@@ -23,7 +23,7 @@ services:
     stdin_open: true
     tty: true
   db:
-    image: ghcr.io/zakky21/docker-plv8/plv8:13.4
+    image: postgres:13.4
     # for debug
     ports:
       - "5432:5432"
