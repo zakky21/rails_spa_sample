@@ -1,13 +1,13 @@
 <div class="ui grid centered">
   <div class="ui eight wide column">
-    <h1 class="column">Todos</h1>
+    <h1>Todos</h1>
     <div id='todos' class="ui relaxed divided list">
       <% @todos.each do |todo| %>
         <%= render todo %>
       <% end %>
     </div>
     <%= turbo_frame_tag :new_todo, class:"item" %>
-    <%= link_to '+ New Todo', new_todo_path, data: { turbo_frame: :new_todo }, class: "ui button" %>
+    <%= link_to '+ New Todo', new_todo_path, data: { turbo_frame: :new_todo }, class: "ui button",style: "margin-top: 1rem" %>
   </div>
 </div>
 <%= turbo_stream_from 'todo_stream_channel' %>
