@@ -1,0 +1,10 @@
+<%= turbo_frame_tag @todo do %>
+  <%= form_with(model: @todo, class: "contents") do |form| %>
+    <div class="ui grid">
+      <div class="column ten wide"><%= form.text_field :name %></div>
+      <div class="column six wide">
+        <%= button_to 'Create', todos_path, method: :post, class: "ui button" %>
+      </div>
+    </div>
+  <% end %>
+<%end%>

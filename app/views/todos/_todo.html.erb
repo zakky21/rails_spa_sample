@@ -1,0 +1,11 @@
+<%= turbo_frame_tag todo, class:"item" do %>
+  <div class="ui grid">
+    <div class="column ten wide"><%= todo.name %></div>
+    <div class="column three wide">
+      <%= button_to 'Delete', todo_path(todo), method: :delete, form: { data: { turbo_confirm: 'are you sure?' }}, class: "ui button" %>
+    </div>
+    <div class="column three wide">
+      <%= link_to 'Edit', edit_todo_path(todo), data: { turbo_frame: todo }, class: "ui button" %>
+    </div>
+  </div>
+<%end%>
